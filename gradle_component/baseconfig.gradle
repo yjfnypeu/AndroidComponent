@@ -1,3 +1,4 @@
+// 各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -17,8 +18,4 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-
-dependencies {
-
 }

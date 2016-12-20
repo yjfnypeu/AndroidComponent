@@ -1,18 +1,22 @@
 package com.haoge.demo.componentusercenter;
 
-import android.app.Application;
+import com.haoge.demo.baselib.BaseApplication;
+import com.haoge.demo.baselib.OnceApplication;
 
-import com.haoge.demo.baselib.router.JMRouteManager;
+public class UCApplication extends OnceApplication {
 
-/**
- * Created by haoge on 2016/12/20.
- */
-
-public class UCApplication extends Application {
+    private static UCApplication application;
+    public synchronized static UCApplication get () {
+        if (application == null) {
+            application = new UCApplication();
+        }
+        return application;
+    }
 
     @Override
     public void onCreate() {
+        application = this;
         super.onCreate();
-        JMRouteManager.get().init();
+        BaseApplication.get().invokeOnCreateOnce();
     }
 }

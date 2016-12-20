@@ -1,7 +1,6 @@
 package com.haoge.demo.androidcomponentdemo;
 
-import android.app.Application;
-
+import com.haoge.demo.baselib.OnceApplication;
 import com.haoge.demo.componentsocial.SocialApplication;
 import com.haoge.demo.componentusercenter.UCApplication;
 
@@ -9,12 +8,12 @@ import com.haoge.demo.componentusercenter.UCApplication;
  * Created by haoge on 2016/12/20.
  */
 
-public class MainApplication extends Application {
+public class MainApplication extends OnceApplication {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        new UCApplication().onCreate();
-        new SocialApplication().onCreate();
+        UCApplication.get().invokeOnCreateOnce();
+        SocialApplication.get().invokeOnCreateOnce();
     }
 }

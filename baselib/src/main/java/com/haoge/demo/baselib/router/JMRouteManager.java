@@ -9,6 +9,10 @@ import com.lzh.nonview.router.exception.NotFoundException;
 import com.lzh.nonview.router.module.RouteCreator;
 import com.lzh.nonview.router.route.RouteCallback;
 
+/**
+ * 对Router框架做二次封装。利于在组件化环境下方便使用：
+ * @see <a href="Router">https://github.com/yjfnypeu/Router</a>
+ */
 public class JMRouteManager {
     private static final String TAG = JMRouteManager.class.getSimpleName();
     private static JMRouteManager manager = new JMRouteManager();
@@ -23,10 +27,12 @@ public class JMRouteManager {
             return;
         }
         inited = true;
+
         loadRouteRulesIfExist();
 
         initRouteBaseConfig();
     }
+
 
     private void initRouteBaseConfig() {
         Router.setGlobalRouteCallback(new RouteCallback() {
@@ -49,6 +55,9 @@ public class JMRouteManager {
         });
     }
 
+    /**
+     * 通过反射加载通过Router框架生成的路由映射表。此处会加载各个组件中通过运行时注解生成的路由表
+     */
     private void loadRouteRulesIfExist() {
         String[] packs = Constant.PACK.Packages;
         String clzNameRouteRules = ".RouterRuleCreator";
