@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply from: "../gradle_component/baseconfig.gradle"
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+
+    compile "${DEVDEPS.parceler}"
+    compile "${DEVDEPS.router}"
+    compile "${DEVDEPS.butterknife}"
+}

@@ -1,0 +1,12 @@
+apply plugin: 'com.android.application'
+apply from: "../../gradle_component/baseconfig.gradle"
+android {
+    defaultConfig {
+        applicationId "com.haoge.demo.appsocial"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(":social:componentsocial")
+}

@@ -1,0 +1,36 @@
+ext {
+    // Android
+    COMPILE_SDK_VERSION = 23
+    BUILD_TOOLS_VERSION = '25.0.0'
+    MIN_SDK_VERSION = 14
+    TARGET_SDK_VERSION = 19
+
+    // SUPPORT
+    SUPPORT_VERSION = '23.2.0'
+    SUPPORTDEPS = [
+            supportV4:      "com.android.support:support-v4:${SUPPORT_VERSION}",
+            supportV13:     "com.android.support:support-v13:${SUPPORT_VERSION}",
+            appcompatV7:    "com.android.support:appcompat-v7:${SUPPORT_VERSION}",
+            cardview      : "com.android.support:cardview-v7:${SUPPORT_VERSION}",
+            recyclerView:   "com.android.support:recyclerview-v7:${SUPPORT_VERSION}",
+            design:         "com.android.support:design:${SUPPORT_VERSION}",
+            annotations:    "com.android.support:support-annotations:${SUPPORT_VERSION}",
+            multidex:       'com.android.support:multidex:1.0.1'
+    ]
+
+    PARCELER_VERSION="0.7"
+    ROUTER_VERSION="0.9"
+    BUTTERKNIFE_VERSION="8.4.0"
+
+    DEVDEPS = [
+            butterknife:        "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION",
+            butterknifeApt:     "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION",
+
+            parceler:           "org.lzh.compiler.parceler:parceler-api:$PARCELER_VERSION",
+            parcelerApt:        "org.lzh.compiler.parceler:parceler-compiler:$PARCELER_VERSION",
+
+            router:             "com.github.yjfnypeu.Router:router-api:$ROUTER_VERSION",
+            routerApt:          "com.github.yjfnypeu.Router:router-compiler:$ROUTER_VERSION"
+    ]
+
+}

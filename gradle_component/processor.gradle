@@ -1,0 +1,7 @@
+// This file defined all of processors in dependencies
+apply plugin: 'android-apt'
+dependencies {
+    apt "${DEVDEPS.parcelerApt}"
+    apt "${DEVDEPS.routerApt}"
+    apt "${DEVDEPS.butterknifeApt}"
+}

@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.haoge.demo.appsocial">
+
+    <application
+        android:name="com.haoge.demo.componentsocial.SocialApplication"
+        >
+        <activity android:name="com.haoge.demo.componentsocial.SocialActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

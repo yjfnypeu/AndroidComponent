@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply from: "../../gradle_component/processor.gradle"
+apply from: "../../gradle_component/baseconfig.gradle"
+android {
+    resourcePrefix "uc_"
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(":baselib")
+}
