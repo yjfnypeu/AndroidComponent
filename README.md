@@ -21,5 +21,7 @@ app             ->  componentsocial ... componentusercenter
 相关资料：
 
 [组件间页面跳转通信传值](https://github.com/yjfnypeu/Router)
+
 [Android项目架构之业务组件化](http://blog.csdn.net/dfskhgalshgkajghljgh/article/details/52486383)
+
 [Android组件化开发实践](http://www.jianshu.com/p/186fa07fc48a)
