@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.haoge.demo.baselib.Constant;
 import com.lzh.nonview.router.anno.RouterRule;
 
-@RouterRule(value = "haoge://loginresult",pack = Constant.PACK.SOCIAL)
+@RouterRule(value = "haoge://loginresult")
 public class LoginResultActivity extends Activity {
 
     @Override

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.haoge.demo.baselib.Constant;
 import com.haoge.demo.baselib.activity.BaseActivity;
 import com.lzh.compiler.parceler.annotation.Arg;
 import com.lzh.nonview.router.Router;
@@ -12,7 +11,7 @@ import com.lzh.nonview.router.anno.RouterRule;
 
 import butterknife.BindView;
 
-@RouterRule(value = "haoge://login.com",pack = Constant.PACK.USERCENTER)
+@RouterRule("haoge://login.com")
 public class LoginActivity extends BaseActivity {
     @Arg
     String username;
@@ -27,7 +26,7 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        System.out.println("LoginActivity onCreate");
         userTv.setText(username);
         pwdTv.setText(password);
 

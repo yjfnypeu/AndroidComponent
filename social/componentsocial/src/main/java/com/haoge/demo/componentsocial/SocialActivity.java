@@ -16,7 +16,7 @@ public class SocialActivity extends BaseActivity {
         getView(R.id.to_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Router.create("haoge://login.com?username=haoge&password=123456").open(SocialActivity.this);
+                Router.create("haoge://login.com?username=&password=123456").open(SocialActivity.this);
             }
         });
     }
