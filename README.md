@@ -14,5 +14,6 @@ app             ->  componentsocial ... componentusercenter
 **此demo只是简单的对组件化时的架构分层管理做说明。实际应用中需要根据具体需要决定具体的组件粒度。基本规则应该是app壳 -> component -> lib**
 ###使用组件化的注意事项
 1. 由于现在所有Activity均放置于component中。所以生成的R文件不是常量。导致ButterKnife此类的需要使用R资源的lib不可用
+**--突然有人提醒。ButterKnife对于在Library中使用有特别的解决方案。所以需要用ButterKnife的童鞋。可以参考[ButterKnife Library使用解决方案](http://www.see-source.com/blog/300000113/1324.html)**
 2. 使用组件化应对资源文件的命名有严格约束。避免导致加载多模块组件的时候由于资源命名冲突导致一些额外问题
 3. 由于多组件的存在。在加载多组件时会容易出现Manifest merge问题。建议了解一下AndroidStudio merger相关知识。

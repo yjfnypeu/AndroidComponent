@@ -10,21 +10,23 @@ import com.lzh.compiler.parceler.annotation.Arg;
 import com.lzh.nonview.router.Router;
 import com.lzh.nonview.router.anno.RouterRule;
 
+import butterknife.BindView;
+
 @RouterRule(value = "haoge://login.com",pack = Constant.PACK.USERCENTER)
 public class LoginActivity extends BaseActivity {
     @Arg
     String username;
     @Arg
     String password;
+    @BindView(R2.id.username)
     TextView userTv;
+    @BindView(R2.id.password)
     TextView pwdTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        userTv = getView(R.id.username);
-        pwdTv = getView(R.id.password);
 
         userTv.setText(username);
         pwdTv.setText(password);

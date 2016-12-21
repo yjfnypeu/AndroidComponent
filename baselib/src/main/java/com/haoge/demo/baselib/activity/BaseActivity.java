@@ -7,12 +7,20 @@ import android.view.View;
 
 import com.lzh.compiler.parceler.Parceler;
 
+import butterknife.ButterKnife;
+
 public class BaseActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Parceler.injectToEntity(this,getIntent());
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        ButterKnife.bind(this);
     }
 
     @Override

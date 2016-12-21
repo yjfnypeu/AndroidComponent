@@ -23,6 +23,9 @@ ext {
     BUTTERKNIFE_VERSION="8.4.0"
 
     DEVDEPS = [
+            butterknife:        "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION",
+            butterknifeApt:     "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION",
+
             parceler:           "org.lzh.compiler.parceler:parceler-api:$PARCELER_VERSION",
             parcelerApt:        "org.lzh.compiler.parceler:parceler-compiler:$PARCELER_VERSION",
 
