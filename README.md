@@ -17,3 +17,9 @@ app             ->  componentsocial ... componentusercenter
 **--突然有人提醒。ButterKnife对于在Library中使用有特别的解决方案。所以需要用ButterKnife的童鞋。可以参考[ButterKnife Library使用解决方案](http://www.see-source.com/blog/300000113/1324.html)**
 2. 使用组件化应对资源文件的命名有严格约束。避免导致加载多模块组件的时候由于资源命名冲突导致一些额外问题
 3. 由于多组件的存在。在加载多组件时会容易出现Manifest merge问题。建议了解一下AndroidStudio merger相关知识。
+
+相关资料：
+
+[组件间页面跳转通信传值](https://github.com/yjfnypeu/Router)
+[Android项目架构之业务组件化](http://blog.csdn.net/dfskhgalshgkajghljgh/article/details/52486383)
+[Android组件化开发实践](http://www.jianshu.com/p/186fa07fc48a)
