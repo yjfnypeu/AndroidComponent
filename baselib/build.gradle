@@ -9,4 +9,5 @@ dependencies {
     compile "${DEVDEPS.parceler}"
     compile "${DEVDEPS.router}"
     compile "${DEVDEPS.butterknife}"
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

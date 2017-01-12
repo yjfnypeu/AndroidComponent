@@ -10,8 +10,9 @@ import com.lzh.nonview.router.Router;
 import com.lzh.nonview.router.anno.RouterRule;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
-@RouterRule("haoge://login.com")
+@RouterRule({"haoge://login.com","xiange://dadiao.cn"})
 public class LoginActivity extends BaseActivity {
     @Arg
     String username;
@@ -29,12 +30,10 @@ public class LoginActivity extends BaseActivity {
         System.out.println("LoginActivity onCreate");
         userTv.setText(username);
         pwdTv.setText(password);
+    }
 
-        getView(R.id.login).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Router.create("haoge://loginresult").open(LoginActivity.this);
-            }
-        });
+    @OnClick(R2.id.login)
+    void onLoginClick (View v) {
+        Router.create("haoge://loginresult").open(LoginActivity.this);
     }
 }
