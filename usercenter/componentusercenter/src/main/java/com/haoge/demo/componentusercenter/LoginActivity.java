@@ -27,7 +27,7 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        System.out.println("LoginActivity onCreate");
+        System.out.println("LoginActivity onCreateDelegate");
         userTv.setText(username);
         pwdTv.setText(password);
     }
