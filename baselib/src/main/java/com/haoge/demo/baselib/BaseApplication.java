@@ -5,17 +5,17 @@ import com.haoge.demo.baselib.router.JMRouteManager;
 public final class BaseApplication extends OnceApplication {
 
     @Override
-    protected int getLevel() {
-        return 0;
+    public int getLevel() {
+        return LEVEL_BASE_LIB;
     }
 
     @Override
-    protected Class[] subDelegates() {
+    public Class[] subDelegates() {
         return null;
     }
 
     @Override
-    protected void onCreateDelegate() {
+    public void onCreateDelegate() {
         JMRouteManager.get().init();
     }
 

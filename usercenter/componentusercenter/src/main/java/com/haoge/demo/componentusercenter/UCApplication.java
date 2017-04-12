@@ -13,32 +13,33 @@ import com.lzh.nonview.router.anno.RouteConfig;
 public class UCApplication extends OnceApplication {
 
     @Override
-    protected int getLevel() {
-        return 5;
+    public int getLevel() {
+        return LEVEL_BIZ;
     }
 
     @Override
-    protected Class[] subDelegates() {
+    public Class[] subDelegates() {
         return new Class[] {BaseApplication.class};
     }
 
     @Override
-    protected void onCreateDelegate() {
+    public void onCreateDelegate() {
     }
 
     @Override
-    protected void onTerminalDelegate() {
+    public void onTerminateDelegate() {
+        super.onTerminateDelegate();
     }
 
     @Override
-    protected void onConfigurationChangedDelegate(Configuration newConfig) {
+    public void onConfigurationChangedDelegate(Configuration newConfig) {
     }
 
     @Override
-    protected void onLowMemoryDelegate() {
+    public void onLowMemoryDelegate() {
     }
 
     @Override
-    protected void onTrimMemoryDelegate(int level) {
+    public void onTrimMemoryDelegate(int level) {
     }
 }

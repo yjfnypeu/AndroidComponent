@@ -7,17 +7,17 @@ import com.haoge.demo.componentusercenter.UCApplication;
 public class MainApplication extends OnceApplication {
 
     @Override
-    protected int getLevel() {
-        return 10;
+    public int getLevel() {
+        return LEVEL_APP;
     }
 
     @Override
-    protected Class[] subDelegates() {
+    public Class[] subDelegates() {
         return new Class[]{UCApplication.class, SocialApplication.class};
     }
 
     @Override
-    protected void onCreateDelegate() {
+    public void onCreateDelegate() {
 
     }
 }

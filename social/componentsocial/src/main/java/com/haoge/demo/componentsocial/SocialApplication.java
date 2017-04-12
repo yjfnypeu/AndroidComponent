@@ -10,18 +10,18 @@ import com.lzh.nonview.router.anno.RouteConfig;
 public class SocialApplication extends OnceApplication {
 
     @Override
-    protected int getLevel() {
-        return 5;
+    public int getLevel() {
+        return LEVEL_BIZ;
     }
 
     @Override
-    protected Class[] subDelegates() {
+    public Class[] subDelegates() {
         return new Class[] {BaseApplication.class};
     }
 
 
     @Override
-    protected void onCreateDelegate() {
+    public void onCreateDelegate() {
 
     }
 
