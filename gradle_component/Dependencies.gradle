@@ -18,8 +18,8 @@ ext {
             multidex:       'com.android.support:multidex:1.0.1'
     ]
 
-    PARCELER_VERSION="0.7"
-    ROUTER_VERSION="1.0"
+    PARCELER_VERSION="0.9.1"
+    ROUTER_VERSION="2.1"
     BUTTERKNIFE_VERSION="8.4.0"
 
     DEVDEPS = [

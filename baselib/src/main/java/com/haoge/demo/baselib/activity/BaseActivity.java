@@ -14,7 +14,7 @@ public class BaseActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Parceler.injectToEntity(this,getIntent());
+        Parceler.toEntity(this,getIntent());
     }
 
     @Override
@@ -26,13 +26,13 @@ public class BaseActivity extends FragmentActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Parceler.injectToBundle(this,outState);
+        Parceler.toBundle(this,outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Parceler.injectToEntity(this,savedInstanceState);
+        Parceler.toEntity(this,savedInstanceState);
     }
 
     public <V extends View> V getView (int resId) {

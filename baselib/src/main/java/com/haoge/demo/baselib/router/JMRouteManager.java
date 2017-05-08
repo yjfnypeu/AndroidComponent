@@ -7,6 +7,7 @@ import com.haoge.demo.baselib.Constant;
 import com.lzh.nonview.router.Router;
 import com.lzh.nonview.router.exception.NotFoundException;
 import com.lzh.nonview.router.module.RouteCreator;
+import com.lzh.nonview.router.module.RouteRule;
 import com.lzh.nonview.router.route.RouteCallback;
 
 /**
@@ -43,12 +44,12 @@ public class JMRouteManager {
             }
 
             @Override
-            public void onOpenSuccess(Uri uri, String clzName) {
-                Log.d(TAG,"open url with " + uri + "successful, claName=" + clzName);
+            public void onOpenSuccess(Uri uri, RouteRule rule) {
+                Log.d(TAG,"open url with " + uri + "successful, claName=" + rule.getRuleClz());
             }
 
             @Override
-            public void onOpenFailed(Uri uri, Exception e) {
+            public void onOpenFailed(Uri uri, Throwable e) {
                 Log.d(TAG,"open url with " + uri + "failed," + e.getMessage());
                 e.printStackTrace();
             }
