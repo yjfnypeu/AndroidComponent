@@ -5,6 +5,17 @@ ext {
     MIN_SDK_VERSION = 14
     TARGET_SDK_VERSION = 19
 
+    COMPONENT_DIR = rootProject.rootDir.absolutePath + "/gradle_component/"
+
+    GRADLES = [
+            baseConfig      :       COMPONENT_DIR + "baseconfig.gradle",
+            processor       :       COMPONENT_DIR + "processor.gradle",
+    ]
+
+    EXCLUDES = [
+
+    ]
+
     // SUPPORT
     SUPPORT_VERSION = '23.2.0'
     SUPPORTDEPS = [

@@ -1,0 +1,31 @@
+import org.gradle.api.internal.artifacts.dependencies.DefaultExternalModuleDependency
+def log = project.logger
+project.configurations.all { configuration ->
+    if (configuration.dependencies.size() == 0) {
+        return
+    }
+    configuration.dependencies.all { dependency ->
+        def dependencyProject = dependency.properties.get("dependencyProject")
+        if (dependencyProject == null) {
+            return
+        }
+        String name = dependency.name
+
+        if (rootProject.getProperties().get("excludes") as String[] != null) {
+            String[] excludes = rootProject.getProperties().get("excludes")
+            if (excludes.contains(name)) {
+                log.error "ignore module $name"
+                return
+            }
+        }
+
+        File repoDir = new File(project.rootDir, ".repo/com/local/maven/$name")
+        if (!repoDir.exists()) {
+            project.logger.log(LogLevel.ERROR, "compile project with name : $dependency.name wasn't be upload to local")
+            return
+        }
+        configuration.dependencies.remove(dependency)
+        configuration.dependencies.add(new DefaultExternalModuleDependency("com.local.maven", dependency.name, "local"))
+        logger.error("$project.name Replace dependency $dependency.name with local name [com.local.maven:$dependency.name:local] successful!")
+    }
+}

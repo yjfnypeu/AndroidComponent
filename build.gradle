@@ -16,6 +16,7 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url rootDir.absolutePath + '/.repo'}
         jcenter()
         maven { url "https://jitpack.io" }
     }
@@ -26,3 +27,11 @@ task clean(type: Delete) {
 }
 
 apply from: "./gradle_component/Dependencies.gradle"
+//apply from: "./gradle_component/speedup.gradle"
+
+apply plugin: 'speedup'
+
+speedup {
+    // 排除打包依赖。此排除的模块将会不进行打包操作。且会在运行时重新编译使用
+    excludes = ['componentusercenter'] as String[]
+}

@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SocialActivity" />
-        <activity android:name=".LoginResultActivity"></activity>
+        <activity android:name=".LoginResultActivity"/>
     </application>
 
 </manifest>

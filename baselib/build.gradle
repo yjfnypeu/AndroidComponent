@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
-apply from: "../gradle_component/baseconfig.gradle"
+apply from: "${GRADLES.baseConfig}"
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:25.1.0'
-    testCompile 'junit:junit:4.12'
 
     compile "${DEVDEPS.parceler}"
     compile "${DEVDEPS.router}"

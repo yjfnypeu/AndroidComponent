@@ -1,0 +1,18 @@
+Properties local = new Properties()
+InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream()
+local.load( inputStream )
+
+String modules = local.get("excludeModules","")
+
+rootProject.ext {
+    excludes = modules.split(',')
+}
+boolean enable = local.get("speedup.enable", false)
+if (!enable) {
+    logger.debug("speedup is disable")
+    return
+}
+
+subprojects {
+    apply from: rootDir.absolutePath + '/gradle_component/localMaven.gradle'
+}

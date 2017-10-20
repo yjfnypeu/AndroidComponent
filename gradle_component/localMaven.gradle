@@ -1,0 +1,33 @@
+apply plugin: 'maven'
+
+def log = project.logger
+afterEvaluate { project ->
+//    apply from: "$GRADLES.replace"
+    def excludes = rootProject.excludes
+    apply from: rootDir.absolutePath + '/gradle_component/replace.gradle'
+
+    if (project == project.rootProject
+            || excludes.contains(project.name)
+            || project.plugins.hasPlugin('com.android.application')) {
+        return
+    }
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                pom.groupId = "com.local.maven"
+                pom.artifactId = project.name
+                pom.version = "local"
+                repository(url: uri(rootDir.absolutePath + "/.repo"))
+
+                pom.whenConfigured { pom ->
+                    pom.dependencies.forEach { dep ->
+                        if (dep.getVersion() == "unspecified") {
+                            dep.setGroupId("com.local.maven")
+                            dep.setVersion("local")
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
