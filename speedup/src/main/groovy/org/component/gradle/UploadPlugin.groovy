@@ -7,17 +7,13 @@ import org.gradle.api.plugins.MavenPlugin
 public class UploadPlugin implements Plugin<Project>{
     @Override
     void apply(Project project) {
+        def root = project.rootProject
         project.plugins.apply(MavenPlugin)
         project.afterEvaluate {
-            def speedup = project.rootProject.extensions.getByType(SpeedupExtension)
-            if (!speedup.enable) {
-                logger.debug("plugin speedup disable")
-                return
-            }
-            String[] excludes = speedup.excludes
+            String[] excludes = root.excludes
             project.plugins.apply(ReplacePlugin)
 
-            if (project == project.rootProject
+            if (project == root
                     || excludes.contains(project.name)
                     || project.plugins.hasPlugin('com.android.application')) {
                 return

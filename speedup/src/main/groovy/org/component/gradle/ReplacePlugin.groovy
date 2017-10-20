@@ -17,14 +17,12 @@ public class ReplacePlugin implements Plugin<Project>{
                 if (dependencyProject == null) {
                     return
                 }
+
                 String name = dependency.name
 
-                if (project.rootProject.getProperties().get("excludes") as String[] != null) {
-                    String[] excludes = rootProject.getProperties().get("excludes")
-                    if (excludes.contains(name)) {
-                        log.debug "ignore module $name"
-                        return
-                    }
+                if (project.rootProject.excludes.contains(name)) {
+                    log.debug "ignore module $name"
+                    return
                 }
 
                 File repoDir = new File(project.rootDir, ".repo/com/local/maven/$name")
