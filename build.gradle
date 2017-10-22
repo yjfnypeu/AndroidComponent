@@ -2,16 +2,16 @@
 
 buildscript {
     repositories {
+        mavenLocal()
         maven { url "https://jitpack.io" }
         jcenter()
-        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         // 添加此插件支持ButterKnife在Library中使用
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
-        classpath 'com.github.yjfnypeu:Speedup:0.1'
+        classpath 'com.github.yjfnypeu:Speedup:0.2'
 //        classpath 'com.github.yjfnypeu:Speedup:local'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

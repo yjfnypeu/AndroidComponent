@@ -11,5 +11,4 @@ dependencies {
 //    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(":usercenter:componentusercenter")
     compile project(":social:componentsocial")
-//    compile 'com.github.yjfnypeu:DataSupport:0.4'
 }
