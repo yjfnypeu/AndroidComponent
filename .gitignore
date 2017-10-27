@@ -9,4 +9,4 @@
 .externalNativeBuild
 /.idea/
 /app/build/
-.repo/
+_repo/

@@ -1,13 +1,11 @@
 apply plugin: 'com.android.library'
 apply from: "${GRADLES.baseConfig}"
 
-
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.1.0'
+    api  'com.android.support:appcompat-v7:25.1.0'
 
-    compile "${DEVDEPS.parceler}"
-    compile "${DEVDEPS.router}"
-    compile "${DEVDEPS.butterknife}"
-    compile 'org.greenrobot:eventbus:3.0.0'
+    api  "${DEVDEPS.parceler}"
+    api  "${DEVDEPS.router}"
+    api  "${DEVDEPS.butterknife}"
+    api  'org.greenrobot:eventbus:3.0.0'
 }
