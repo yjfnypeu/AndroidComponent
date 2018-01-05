@@ -1,4 +1,4 @@
-package com.haoge.demo.baselib;
+package com.haoge.demo.baselib.delegate;
 
 import android.app.Application;
 import android.content.Context;

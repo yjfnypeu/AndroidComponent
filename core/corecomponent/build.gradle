@@ -1,0 +1,8 @@
+apply plugin: 'com.android.library'
+apply from: "${GRADLES.baseConfig}"
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile  project(":baselib")
+}

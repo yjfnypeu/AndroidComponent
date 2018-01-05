@@ -1,7 +1,7 @@
 package com.haoge.demo.componentsocial;
 
 import com.haoge.demo.baselib.BaseApplication;
-import com.haoge.demo.baselib.ApplicationDelegate;
+import com.haoge.demo.baselib.delegate.ApplicationDelegate;
 import com.haoge.demo.baselib.router.ComponentPackages;
 import com.lzh.nonview.router.anno.RouteConfig;
 

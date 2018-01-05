@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.haoge.demo.baselib.activity.BaseActivity;
+import com.haoge.demo.baselib.BaseActivity;
 import com.lzh.compiler.parceler.annotation.Arg;
 import com.lzh.nonview.router.Router;
 import com.lzh.nonview.router.anno.RouterRule;

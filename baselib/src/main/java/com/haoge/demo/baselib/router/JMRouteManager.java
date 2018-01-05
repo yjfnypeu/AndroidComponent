@@ -3,7 +3,7 @@ package com.haoge.demo.baselib.router;
 import android.net.Uri;
 import android.util.Log;
 
-import com.lzh.nonview.router.Router;
+import com.lzh.nonview.router.RouterConfiguration;
 import com.lzh.nonview.router.exception.NotFoundException;
 import com.lzh.nonview.router.module.RouteCreator;
 import com.lzh.nonview.router.module.RouteRule;
@@ -35,7 +35,7 @@ public class JMRouteManager {
 
 
     private void initRouteBaseConfig() {
-        Router.setGlobalRouteCallback(new RouteCallback() {
+        RouterConfiguration.get().setCallback(new RouteCallback() {
             @Override
             public void notFound(Uri uri, NotFoundException e) {
                 Log.e(TAG,"open url with " + uri + "failed.not found");
@@ -65,7 +65,7 @@ public class JMRouteManager {
             try {
                 Class<?> creator = Class.forName(pack + clzNameRouteRules);
                 RouteCreator instance = (RouteCreator) creator.newInstance();
-                Router.addRouteCreator(instance);
+                RouterConfiguration.get().addRouteCreator(instance);
             } catch (Exception ignore) {
             }
         }

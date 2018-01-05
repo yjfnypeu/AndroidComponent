@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
+import com.haoge.demo.baselib.delegate.ApplicationDelegate;
 import com.haoge.demo.baselib.router.JMRouteManager;
 import com.haoge.demo.baselib.tool.ActivityManager;
+import com.haoge.demo.baselib.tool.EnvironmentVariable;
+import com.haoge.demo.baselib.tool.SingleContainer;
 import com.lzh.compiler.parceler.Parceler;
 
 public final class BaseApplication extends ApplicationDelegate {
@@ -23,6 +26,8 @@ public final class BaseApplication extends ApplicationDelegate {
     @Override
     public void onCreateDelegate() {
         JMRouteManager.get().init();
+        SingleContainer.init(getApplicationContext());
+        boolean debug = EnvironmentVariable.DEBUG;
         ((Application) getApplicationContext()).registerActivityLifecycleCallbacks(new ActivityCallback());
     }
 

@@ -12,10 +12,6 @@ ext {
             processor       :       COMPONENT_DIR + "processor.gradle",
     ]
 
-    EXCLUDES = [
-
-    ]
-
     // SUPPORT
     SUPPORT_VERSION = '23.2.0'
     SUPPORTDEPS = [
@@ -29,16 +25,16 @@ ext {
             multidex:       'com.android.support:multidex:1.0.1'
     ]
 
-    PARCELER_VERSION="0.9.1"
-    ROUTER_VERSION="2.1"
+    PARCELER_VERSION="1.3.5"
+    ROUTER_VERSION="2.5.0"
     BUTTERKNIFE_VERSION="8.4.0"
 
     DEVDEPS = [
             butterknife     :   "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION",
             butterknifeApt  :   "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION",
 
-            parceler        :   "org.lzh.compiler.parceler:parceler-api:$PARCELER_VERSION",
-            parcelerApt     :   "org.lzh.compiler.parceler:parceler-compiler:$PARCELER_VERSION",
+            parceler        :   "com.github.yjfnypeu.Parceler:api:$PARCELER_VERSION",
+            parcelerApt     :   "com.github.yjfnypeu.Parceler:compiler:$PARCELER_VERSION",
 
             router          :   "com.github.yjfnypeu.Router:router-api:$ROUTER_VERSION",
             routerApt       :   "com.github.yjfnypeu.Router:router-compiler:$ROUTER_VERSION",

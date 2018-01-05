@@ -7,11 +7,11 @@ package com.haoge.demo.baselib.router;
  * </p>
  */
 public final class ComponentPackages {
-    public static final String USERCENTER = "com.jm.android.app.usercenter";
+    public static final String UC = "com.jm.android.app.usercenter";
     public static final String SOCIAL = "com.jm.android.app.social";
 
     /**
      * JMRouteManager中使用此数组数据来加载所有的路由映射表。
      */
-    public static final String[] Packages = new String[] {USERCENTER,SOCIAL};
+    public static final String[] Packages = new String[] {UC,SOCIAL};
 }

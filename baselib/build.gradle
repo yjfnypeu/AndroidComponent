@@ -7,4 +7,5 @@ dependencies {
     compile  "${DEVDEPS.butterknife}"
     compile  "${DEVDEPS.datasupport}"
     compile  "${DEVDEPS.fastjson}"
+    compile  "${SUPPORTDEPS.supportV4}"
 }
