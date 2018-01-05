@@ -3,6 +3,7 @@ package com.lzh.zhihunewscomponent.list;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -10,6 +11,8 @@ import com.haoge.demo.baselib.BaseActivity;
 import com.haoge.demo.baselib.router.interceptors.LoginInterceptor;
 import com.haoge.demo.baselib.router.routings.Routing;
 import com.haoge.demo.baselib.tool.ToastTool;
+import com.lzh.compiler.parceler.Parceler;
+import com.lzh.nonview.router.Router;
 import com.lzh.nonview.router.anno.RouteInterceptors;
 import com.lzh.nonview.router.anno.RouterRule;
 import com.lzh.zhihunewscomponent.NewsApplication;
@@ -33,6 +36,7 @@ public class NewsListActivity extends BaseActivity {
     ListView newsList;
     @BindView(R2.id.empty)
     View empty;
+    List<NewsList.StoriesBean> list;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +44,24 @@ public class NewsListActivity extends BaseActivity {
 
         newsList.setEmptyView(empty);
 
+        newsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                NewsList.StoriesBean item = list.get(position);
+                Router.create(Routing.NEWS_DETAIL)
+                        .getBaseRoute()
+                        .addExtras(Parceler.createFactory(null)
+//                                .put("id", item.id)
+                                .getBundle())
+                        .open(NewsListActivity.this);
+            }
+        });
+
         queryList();
     }
 
     private void updateList(List<NewsList.StoriesBean> stories) {
+        list = stories;
         String[] titles = new String[stories.size()];
         for (int i = 0; i < stories.size(); i++) {
             titles[i] = stories.get(i).title;

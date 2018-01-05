@@ -29,7 +29,7 @@ public class NewsList {
          */
 
         public int type;
-        public int id;
+        public String id;
         public String ga_prefix;
         public String title;
         public boolean multipic;
