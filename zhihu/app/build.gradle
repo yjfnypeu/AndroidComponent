@@ -1,0 +1,12 @@
+apply plugin: 'com.android.application'
+apply from: "${GRADLES.baseConfig}"
+
+android {
+    defaultConfig {
+        applicationId "com.haoge.component.demo"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

@@ -1,3 +1,4 @@
 include ':app', ':baselib'
 include ':usercenter:componentusercenter', ':usercenter:appusercenter'
 include ':core:corecomponent'
+include ':zhihu:component', ':zhihu:app'
