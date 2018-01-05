@@ -1,4 +1,3 @@
 include ':app', ':baselib'
 include ':usercenter:componentusercenter', ':usercenter:appusercenter'
-include ':social:componentsocial', ':social:appsocial'
 include ':core:corecomponent'

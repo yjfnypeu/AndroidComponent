@@ -9,14 +9,13 @@
         android:label="@string/main_label"
         android:supportsRtl="true"
         tools:replace="android:label">
-        <activity android:name="com.haoge.demo.componentsocial.SocialActivity">
+        <activity android:name="com.haoge.demo.componentusercenter.SettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RootActivity"></activity>
     </application>
 
 </manifest>
