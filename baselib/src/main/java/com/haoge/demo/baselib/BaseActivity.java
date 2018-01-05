@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.haoge.demo.baselib.tool.EnvironmentVariable;
+import com.haoge.demo.baselib.tool.ToastTool;
 import com.lzh.compiler.parceler.Parceler;
 import com.lzh.datasupport.DataSupport;
 
@@ -26,7 +27,10 @@ public class BaseActivity extends Activity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Parceler.toEntity(this, getIntent());
-        checker.check(this);
+        if (!checker.check(this)) {
+            ToastTool.show("界面加载异常");
+            finish();
+        }
     }
 
     @Override

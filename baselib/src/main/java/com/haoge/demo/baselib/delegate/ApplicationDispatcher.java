@@ -39,7 +39,6 @@ public final class ApplicationDispatcher {
                     link(sub);
                 }
             } catch (Throwable t) {
-                t.printStackTrace();
             }
         }
         Collections.sort(container, new Comparator<IApplicationDelegate>() {

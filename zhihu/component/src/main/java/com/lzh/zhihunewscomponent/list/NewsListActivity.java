@@ -51,7 +51,7 @@ public class NewsListActivity extends BaseActivity {
                 Router.create(Routing.NEWS_DETAIL)
                         .getBaseRoute()
                         .addExtras(Parceler.createFactory(null)
-//                                .put("id", item.id)
+                                .put("id", item.id)
                                 .getBundle())
                         .open(NewsListActivity.this);
             }

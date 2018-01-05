@@ -8,9 +8,9 @@
     tools:context="com.haoge.demo.componentusercenter.SettingActivity">
 
     <com.haoge.demo.componentusercenter.views.SettingItem
-        android:id="@+id/toLoginActivity"
-        app:name="去登录"
-        android:onClick="toLoginActivity"
+        android:id="@+id/toNewsListActivity"
+        app:name="去看新闻"
+        android:onClick="toNewsListActivity"
         android:layout_width="match_parent"
         android:layout_height="48dp"/>
 

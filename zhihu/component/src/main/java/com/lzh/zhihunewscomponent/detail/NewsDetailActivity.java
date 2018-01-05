@@ -54,6 +54,7 @@ public class NewsDetailActivity extends BaseActivity {
 
             @Override
             public void onFailure(Call<NewsDetail> call, Throwable t) {
+                t.printStackTrace();
                 ToastTool.show("请求详情数据失败");
                 finish();
             }

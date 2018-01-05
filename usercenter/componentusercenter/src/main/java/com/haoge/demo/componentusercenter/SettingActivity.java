@@ -26,10 +26,10 @@ public class SettingActivity extends BaseActivity {
         super.onResume();
         if (PipeManager.get(CorePipe.class).isLogin()) {
             findViewById(R.id.logout).setVisibility(View.VISIBLE);
-            findViewById(R.id.toLoginActivity).setVisibility(View.GONE);
+            findViewById(R.id.toNewsListActivity).setVisibility(View.GONE);
         } else {
             findViewById(R.id.logout).setVisibility(View.GONE);
-            findViewById(R.id.toLoginActivity).setVisibility(View.VISIBLE);
+            findViewById(R.id.toNewsListActivity).setVisibility(View.VISIBLE);
         }
     }
 
@@ -50,7 +50,7 @@ public class SettingActivity extends BaseActivity {
         Router.create(Routing.LOGIN).open(this);
     }
 
-    public void toLoginActivity(View view) {
-        Router.create(Routing.LOGIN).open(this);
+    public void toNewsListActivity(View view) {
+        Router.create(Routing.NEWS_LIST).open(this);
     }
 }

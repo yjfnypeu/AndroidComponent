@@ -1,8 +1,9 @@
 package com.haoge.component.demo;
 
 import com.haoge.demo.baselib.delegate.ApplicationDelegate;
-import com.haoge.demo.componentsocial.SocialApplication;
 import com.haoge.demo.componentusercenter.UCApplication;
+import com.lzh.corecomponent.CoreApplication;
+import com.lzh.zhihunewscomponent.NewsApplication;
 
 public class MainApplication extends ApplicationDelegate {
 
@@ -13,7 +14,7 @@ public class MainApplication extends ApplicationDelegate {
 
     @Override
     public Class[] subDelegates() {
-        return new Class[]{UCApplication.class, SocialApplication.class};
+        return new Class[]{UCApplication.class, NewsApplication.class, CoreApplication.class};
     }
 
     @Override
