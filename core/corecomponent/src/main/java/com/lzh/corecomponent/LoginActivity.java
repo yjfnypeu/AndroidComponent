@@ -8,10 +8,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.haoge.demo.baselib.BaseActivity;
+import com.haoge.demo.baselib.router.routings.Routing;
 import com.lzh.compiler.parceler.annotation.Arg;
 import com.lzh.nonview.router.Router;
+import com.lzh.nonview.router.anno.RouteConfig;
+import com.lzh.nonview.router.anno.RouterRule;
 import com.lzh.nonview.router.extras.RouteBundleExtras;
 
+@RouterRule(Routing.LOGIN)
 public class LoginActivity extends BaseActivity {
 
     EditText username;
@@ -46,5 +50,7 @@ public class LoginActivity extends BaseActivity {
             // uri不为null。恢复启动路由
             Router.resume(uri, extras).open(this);
         }
+
+        finish();
     }
 }

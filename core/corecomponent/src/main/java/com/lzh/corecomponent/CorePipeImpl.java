@@ -11,4 +11,9 @@ public class CorePipeImpl implements CorePipe {
     public boolean isLogin() {
         return UserManager.isLogin;
     }
+
+    @Override
+    public void logout() {
+        UserManager.isLogin = false;
+    }
 }

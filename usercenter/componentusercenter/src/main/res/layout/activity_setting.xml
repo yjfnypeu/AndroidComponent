@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.haoge.demo.componentusercenter.SettingActivity">
+
+    <com.haoge.demo.componentusercenter.views.SettingItem
+        android:id="@+id/toLoginActivity"
+        app:name="去登录"
+        android:onClick="toLoginActivity"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"/>
+
+    <com.haoge.demo.componentusercenter.views.SettingItem
+        android:onClick="onClearCacheClick"
+        app:name="清理缓存"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"/>
+
+    <com.haoge.demo.componentusercenter.views.SettingItem
+        app:name="关于"
+        android:onClick="onAboutClick"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"/>
+
+    <com.haoge.demo.componentusercenter.views.SettingItem
+        app:name="检查更新"
+        android:onClick="onUpdateClick"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:text="退出登录"
+        android:onClick="onLogoutClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

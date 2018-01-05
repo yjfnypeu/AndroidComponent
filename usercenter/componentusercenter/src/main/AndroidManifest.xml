@@ -2,14 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.haoge.demo.componentusercenter">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <!--Component中的注册Activity不加入Launcher.应于app壳工程中复写加入-->
-        <activity android:name=".LoginActivity"/>
+    <application>
+        <activity android:name=".SettingActivity"/>
     </application>
 
 </manifest>

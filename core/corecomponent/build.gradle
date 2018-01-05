@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: "${GRADLES.baseConfig}"
+apply from: "${GRADLES.processor}"
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

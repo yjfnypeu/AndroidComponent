@@ -9,4 +9,6 @@ import com.haoge.demo.baselib.pipe.core.Pipe;
 public interface CorePipe extends Pipe{
 
     boolean isLogin();
+
+    void logout();
 }

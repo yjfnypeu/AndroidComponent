@@ -2,9 +2,11 @@ package com.haoge.demo.baselib;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.haoge.demo.baselib.tool.EnvironmentVariable;
 import com.lzh.compiler.parceler.Parceler;
 import com.lzh.datasupport.DataSupport;
 
@@ -16,13 +18,21 @@ import butterknife.ButterKnife;
 public class BaseActivity extends Activity{
 
     // 对
-    static DataSupport checker = DataSupport.create().throwable(false);
+    static DataSupport checker = DataSupport.create()
+            // Debug环境时，当检查失败时，直接抛出异常。
+            .throwable(EnvironmentVariable.DEBUG);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
         Parceler.toEntity(this, getIntent());
+        checker.check(this);
+    }
+
+    @Override
+    public void setContentView(@LayoutRes int layoutResID) {
+        super.setContentView(layoutResID);
+        ButterKnife.bind(this);
     }
 
     @Override

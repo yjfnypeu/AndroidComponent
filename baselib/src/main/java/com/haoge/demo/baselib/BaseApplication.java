@@ -27,7 +27,6 @@ public final class BaseApplication extends ApplicationDelegate {
     public void onCreateDelegate() {
         JMRouteManager.get().init();
         SingleContainer.init(getApplicationContext());
-        boolean debug = EnvironmentVariable.DEBUG;
         ((Application) getApplicationContext()).registerActivityLifecycleCallbacks(new ActivityCallback());
     }
 

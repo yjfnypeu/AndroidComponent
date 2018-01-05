@@ -4,12 +4,11 @@
     package="com.haoge.component.demo">
 
     <application
-        tools:replace="android:label"
         android:name=".MainApplication"
         android:allowBackup="true"
         android:label="@string/main_label"
-        android:supportsRtl="true">
-
+        android:supportsRtl="true"
+        tools:replace="android:label">
         <activity android:name="com.haoge.demo.componentsocial.SocialActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RootActivity"></activity>
     </application>
 
 </manifest>

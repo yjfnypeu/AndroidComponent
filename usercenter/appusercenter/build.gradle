@@ -10,4 +10,5 @@ android {
 dependencies {
     compile  fileTree(dir: 'libs', include: ['*.jar'])
     compile  project(":usercenter:componentusercenter")
+    compile project(":core:corecomponent")
 }

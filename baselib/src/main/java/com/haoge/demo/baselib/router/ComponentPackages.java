@@ -6,12 +6,13 @@ package com.haoge.demo.baselib.router;
  *     对Activity使用{@link com.lzh.nonview.router.anno.RouterRule} 注解。指定pack报名。即可
  * </p>
  */
-public final class ComponentPackages {
-    public static final String UC = "com.jm.android.app.usercenter";
-    public static final String SOCIAL = "com.jm.android.app.social";
+public interface ComponentPackages {
+    String UC = "com.haoge.component.demo.usercenter";
+    String SOCIAL = "com.haoge.component.demo.social";
+    String CORE = "com.haoge.component.demo.core";
 
     /**
      * JMRouteManager中使用此数组数据来加载所有的路由映射表。
      */
-    public static final String[] Packages = new String[] {UC,SOCIAL};
+    String[] Packages = new String[] {UC, SOCIAL, CORE};
 }
