@@ -2,10 +2,9 @@ apply plugin: 'com.android.library'
 apply from: "${GRADLES.baseConfig}"
 
 dependencies {
-    compile  'com.android.support:appcompat-v7:25.1.0'
-
     compile  "${DEVDEPS.parceler}"
     compile  "${DEVDEPS.router}"
     compile  "${DEVDEPS.butterknife}"
-    compile  'org.greenrobot:eventbus:3.0.0'
+    compile  "${DEVDEPS.datasupport}"
+    compile  "${DEVDEPS.fastjson}"
 }

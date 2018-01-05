@@ -34,14 +34,17 @@ ext {
     BUTTERKNIFE_VERSION="8.4.0"
 
     DEVDEPS = [
-            butterknife:        "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION",
-            butterknifeApt:     "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION",
+            butterknife     :   "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION",
+            butterknifeApt  :   "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION",
 
-            parceler:           "org.lzh.compiler.parceler:parceler-api:$PARCELER_VERSION",
-            parcelerApt:        "org.lzh.compiler.parceler:parceler-compiler:$PARCELER_VERSION",
+            parceler        :   "org.lzh.compiler.parceler:parceler-api:$PARCELER_VERSION",
+            parcelerApt     :   "org.lzh.compiler.parceler:parceler-compiler:$PARCELER_VERSION",
 
-            router:             "com.github.yjfnypeu.Router:router-api:$ROUTER_VERSION",
-            routerApt:          "com.github.yjfnypeu.Router:router-compiler:$ROUTER_VERSION"
+            router          :   "com.github.yjfnypeu.Router:router-api:$ROUTER_VERSION",
+            routerApt       :   "com.github.yjfnypeu.Router:router-compiler:$ROUTER_VERSION",
+
+            datasupport     :   "com.github.yjfnypeu:DataSupport:0.4",
+            fastjson        :   'com.alibaba:fastjson:1.1.67.android',
     ]
 
 }

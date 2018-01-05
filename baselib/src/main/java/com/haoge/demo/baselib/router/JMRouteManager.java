@@ -3,7 +3,6 @@ package com.haoge.demo.baselib.router;
 import android.net.Uri;
 import android.util.Log;
 
-import com.haoge.demo.baselib.Constant;
 import com.lzh.nonview.router.Router;
 import com.lzh.nonview.router.exception.NotFoundException;
 import com.lzh.nonview.router.module.RouteCreator;
@@ -60,7 +59,7 @@ public class JMRouteManager {
      * 通过反射加载通过Router框架生成的路由映射表。此处会加载各个组件中通过运行时注解生成的路由表
      */
     private void loadRouteRulesIfExist() {
-        String[] packs = Constant.PACK.Packages;
+        String[] packs = ComponentPackages.Packages;
         String clzNameRouteRules = ".RouterRuleCreator";
         for (String pack : packs) {
             try {

@@ -2,13 +2,12 @@ package com.haoge.demo.androidcomponentdemo;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.util.Log;
 
-import com.haoge.demo.baselib.OnceApplication;
+import com.haoge.demo.baselib.ApplicationDelegate;
 import com.haoge.demo.componentsocial.SocialApplication;
 import com.haoge.demo.componentusercenter.UCApplication;
 
-public class MainApplication extends OnceApplication {
+public class MainApplication extends ApplicationDelegate {
 
     @Override
     public int getLevel() {

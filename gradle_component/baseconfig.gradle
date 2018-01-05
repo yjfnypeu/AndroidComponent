@@ -1,9 +1,13 @@
 // 各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
+boolean isAppModule = project.plugins.hasPlugin('com.android.application')
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
 
     defaultConfig {
+        if (isAppModule) {
+            applicationId "com.haoge.component.demo"
+        }
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1

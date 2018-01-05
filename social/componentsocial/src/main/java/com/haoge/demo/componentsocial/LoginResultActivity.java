@@ -3,7 +3,6 @@ package com.haoge.demo.componentsocial;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.haoge.demo.baselib.Constant;
 import com.lzh.nonview.router.anno.RouterRule;
 
 @RouterRule(value = "haoge://loginresult")

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.util.Log;
 
-import com.haoge.demo.baselib.delegate.ApplicationDelegate;
+import com.haoge.demo.baselib.delegate.IApplicationDelegate;
 import com.haoge.demo.baselib.delegate.ApplicationDispatcher;
 
 
@@ -13,7 +13,7 @@ import com.haoge.demo.baselib.delegate.ApplicationDispatcher;
  * 由于多个组件均含有各自的Application。使用多组件时需要手动派发Application的onCreate时间。使用此类做
  * 约束。避免同一个Application被多次调用
  */
-public abstract class OnceApplication extends Application implements ApplicationDelegate {
+public abstract class ApplicationDelegate extends Application implements IApplicationDelegate {
     @Override
     public final void onCreate() {
         super.onCreate();

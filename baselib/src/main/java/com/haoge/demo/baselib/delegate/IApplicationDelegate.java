@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.support.annotation.IntDef;
 
-public interface ApplicationDelegate {
+public interface IApplicationDelegate {
 
     int LEVEL_BASE_LIB = 0;
     int LEVEL_LIB = 1;
@@ -22,7 +22,7 @@ public interface ApplicationDelegate {
 
     /**
      * 配置此代理的所依赖的子代理。
-     * @return ApplicationDelegate 的Class[]
+     * @return IApplicationDelegate 的Class[]
      */
     Class[] subDelegates();
 

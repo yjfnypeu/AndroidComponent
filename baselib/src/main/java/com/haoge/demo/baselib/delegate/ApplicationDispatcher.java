@@ -11,7 +11,7 @@ import java.util.LinkedList;
 
 public final class ApplicationDispatcher {
 
-    private static LinkedList<ApplicationDelegate> container = new LinkedList<>();
+    private static LinkedList<IApplicationDelegate> container = new LinkedList<>();
     Application application;
 
     /**
@@ -26,7 +26,7 @@ public final class ApplicationDispatcher {
      * 配置添加代理类与其所有的子代理类进入链表。并根据代理类的level进行排序。以便派发生命周期代理函数
      * @param delegate delegate instance
      */
-    public void link (ApplicationDelegate delegate) {
+    public void link (IApplicationDelegate delegate) {
         if (container.contains(delegate)) {
             return;
         }
@@ -34,24 +34,24 @@ public final class ApplicationDispatcher {
         Class[] classes = delegate.subDelegates();
         for (Class clz : classes) {
             try {
-                if (ApplicationDelegate.class.isAssignableFrom(clz) && !hasApplication(clz)) {
-                    ApplicationDelegate sub = (ApplicationDelegate) clz.newInstance();
+                if (IApplicationDelegate.class.isAssignableFrom(clz) && !hasApplication(clz)) {
+                    IApplicationDelegate sub = (IApplicationDelegate) clz.newInstance();
                     link(sub);
                 }
             } catch (Throwable t) {
                 t.printStackTrace();
             }
         }
-        Collections.sort(container, new Comparator<ApplicationDelegate>() {
+        Collections.sort(container, new Comparator<IApplicationDelegate>() {
             @Override
-            public int compare(ApplicationDelegate lhs, ApplicationDelegate rhs) {
+            public int compare(IApplicationDelegate lhs, IApplicationDelegate rhs) {
                 return lhs.getLevel() - rhs.getLevel();
             }
         });
     }
 
     private boolean hasApplication (Class clz) {
-        for (ApplicationDelegate delegate : container){
+        for (IApplicationDelegate delegate : container){
             if (delegate.getClass().equals(clz)) {
                 return true;
             }
@@ -64,7 +64,7 @@ public final class ApplicationDispatcher {
      * @param base base context
      */
     public void performAttachBaseContext (Context base) {
-        for (ApplicationDelegate delegate : container) {
+        for (IApplicationDelegate delegate : container) {
             delegate.attachBaseContextDelegate(base);
         }
     }
@@ -73,7 +73,7 @@ public final class ApplicationDispatcher {
      * 触发调用onCreate的代理周期函数。
      */
     public void performCreate () {
-        for (ApplicationDelegate delegate : container) {
+        for (IApplicationDelegate delegate : container) {
             delegate.onCreateDelegate();
         }
     }
@@ -82,7 +82,7 @@ public final class ApplicationDispatcher {
      * 触发调用onTerminate的代理周期函数。
      */
     public void performTerminal () {
-        for (ApplicationDelegate delegate : container) {
+        for (IApplicationDelegate delegate : container) {
             delegate.onTerminateDelegate();
         }
     }
@@ -91,7 +91,7 @@ public final class ApplicationDispatcher {
      * 触发调用onConfigurationChanged的代理周期函数。
      */
     public void performConfigurationChanged (Configuration newConfig) {
-        for (ApplicationDelegate delegate : container) {
+        for (IApplicationDelegate delegate : container) {
             delegate.onConfigurationChangedDelegate(newConfig);
         }
     }
@@ -100,7 +100,7 @@ public final class ApplicationDispatcher {
      * 触发调用onLowMemory的代理周期函数。
      */
     public void performLowMemory () {
-        for (ApplicationDelegate delegate : container) {
+        for (IApplicationDelegate delegate : container) {
             delegate.onLowMemoryDelegate();
         }
     }
@@ -109,7 +109,7 @@ public final class ApplicationDispatcher {
      * 触发调用onTrimMemory的代理周期函数。
      */
     public void performTrimMemory (int level) {
-        for (ApplicationDelegate delegate : container) {
+        for (IApplicationDelegate delegate : container) {
             delegate.onTrimMemoryDelegate(level);
         }
     }
