@@ -3,7 +3,10 @@ apply plugin: 'com.android.library'
 apply from: "${GRADLES.baseConfig}"
 apply from: "${GRADLES.processor}"
 
+android {
+    resourcePrefix "zhih_"
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+    compile  project(":baselib")
 }

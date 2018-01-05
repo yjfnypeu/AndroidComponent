@@ -8,4 +8,8 @@ dependencies {
     compile  "${DEVDEPS.datasupport}"
     compile  "${DEVDEPS.fastjson}"
     compile  "${SUPPORTDEPS.supportV4}"
+
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.ZYRzyr:FastJsonConverter:1.6'
 }

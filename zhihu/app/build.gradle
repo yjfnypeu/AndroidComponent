@@ -8,5 +8,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(":zhihu:component")
+    compile project(":core:corecomponent")
 }
