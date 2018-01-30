@@ -7,7 +7,6 @@ import java.util.LinkedList;
 /**
  * @author haoge on 2018/1/4.
  */
-
 public class ActivityManager {
 
     private static LinkedList<Activity> stack = new LinkedList<>();

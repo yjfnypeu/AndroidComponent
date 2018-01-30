@@ -5,9 +5,9 @@ import android.os.Handler;
 import android.os.Looper;
 
 /**
+ *
  * @author haoge on 2018/1/5.
  */
-
 public final class SingleContainer {
     static SingleContainer INSTANCE = new SingleContainer();
     public Handler mainHandler;

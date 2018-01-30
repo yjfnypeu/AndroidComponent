@@ -12,7 +12,7 @@ buildscript {
         // 添加此插件支持ButterKnife在Library中使用
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
         // 用于对组件化多module环境编译加速的插件。可参考https://github.com/JumeiRdGroup/Speedup
-        classpath 'com.github.yjfnypeu:Speedup:0.8'
+        classpath 'com.github.yjfnypeu:Speedup:0.9'
     }
 }
 
